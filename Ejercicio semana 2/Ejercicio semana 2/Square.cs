@@ -8,16 +8,16 @@ namespace Ejercicio_semana_2
 {
     class Square : Shape
     {
-        private float side;
+        private float sideSquare;
 
-        public Square (float side)
+        public Square(float sideSquare)
         {
-            this.name = "Square";
+            this.sideSquare = sideSquare;
         }
 
         public override float CalculateArea()
         {
-            return side * side;
+            return sideSquare * sideSquare;
         }
     }
 }

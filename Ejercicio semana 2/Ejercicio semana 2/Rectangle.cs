@@ -13,7 +13,6 @@ namespace Ejercicio_semana_2
 
         public Rectangle(float b, float h)
         {
-            this.name = "Rectangle";
             this.b = b;
             this.h = h;
         }

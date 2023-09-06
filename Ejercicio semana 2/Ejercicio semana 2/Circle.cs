@@ -12,7 +12,6 @@ namespace Ejercicio_semana_2
 
         public Circle (float radius)
         {
-            this.name = "Circle";
             this.radius = radius;
         }
 

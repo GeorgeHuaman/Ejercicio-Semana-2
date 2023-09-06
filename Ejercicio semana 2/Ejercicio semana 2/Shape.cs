@@ -8,12 +8,6 @@ namespace Ejercicio_semana_2
 {
     class Shape
     {
-        protected string name;
-
-        public string GetName()
-        {
-            return name;
-        }
 
         public virtual float CalculateArea()
         {

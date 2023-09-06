@@ -13,7 +13,6 @@ namespace Ejercicio_semana_2
 
         public Triangle(float b, float h)
         {
-            this.name = "Circle";
             this.b = b;
             this.h = h;
         }
