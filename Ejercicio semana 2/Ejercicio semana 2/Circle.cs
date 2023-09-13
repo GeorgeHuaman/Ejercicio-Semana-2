@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_semana_2
 {
-    class Circle : Shape
+    class Circle : Shape, ICalculateArea
     {
         private float radius;
 
-        public Circle (float radius)
+        public Circle (string name, float radius) : base ("Circulo", name)
         {
             this.radius = radius;
         }
 
-        public override float CalculateArea()
+        public float CalculateArea()
         {
             return radius * radius * 3.14f;
         }

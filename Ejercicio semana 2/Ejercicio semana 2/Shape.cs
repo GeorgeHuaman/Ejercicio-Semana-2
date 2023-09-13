@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_semana_2
 {
-    class Shape
+    abstract class Shape
     {
-
-        public virtual float CalculateArea()
+        protected string type;
+        protected string name;
+        
+        protected Shape(string type, string name)
         {
-            return 0;
+            this.type = type;
+            this.name = name;
+        }
+
+        public string GetDetails()
+        {
+            return $"La figura es de tipo {type} tiene el nombre de {name}";
         }
     }
 }

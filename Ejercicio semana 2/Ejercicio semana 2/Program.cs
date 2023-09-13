@@ -10,10 +10,6 @@ namespace Ejercicio_semana_2
     {
         static void Main(string[] args)
         {
-            Shape square = null;
-            Shape circle = null;
-            Shape rectangle = null;
-            Shape triangle = null;
             string option;
 
             Console.WriteLine("Seleccione una figura para calcular su área:");
@@ -23,6 +19,8 @@ namespace Ejercicio_semana_2
             Console.WriteLine("4. Triángulo");
             Console.WriteLine("5. Salir");
 
+            List<ICalculateArea> shapeAreas = new List<ICalculateArea>();
+
             option = Console.ReadLine();
             switch (option)
             {
@@ -30,13 +28,15 @@ namespace Ejercicio_semana_2
                     float side;
                     Console.WriteLine("Introducir el lado del cuadrado: ");
                     side = float.Parse(Console.ReadLine());
-                    square = new Square(side);
+                    //square = new Square(side);
+                    shapeAreas.Add(new Square("Cuadrado", side));
                     break;
                 case "2":
                     float radius;
                     Console.WriteLine("Introducir el radio del circulo: ");
                     radius = float.Parse(Console.ReadLine());
-                    circle = new Circle(radius);
+                    //circle = new Circle(radius);
+                    shapeAreas.Add(new Circle("Circulo", radius));
                     break;
                 case "3":
                     float b;
@@ -45,7 +45,8 @@ namespace Ejercicio_semana_2
                     float h;
                     Console.WriteLine("Introducir la altura del rectangulo: ");
                     h = float.Parse(Console.ReadLine());
-                    rectangle = new Rectangle(h,b);
+                    //rectangle = new Rectangle(h,b);
+                    shapeAreas.Add(new Rectangle("Rectangulo", b, h));
                     break;
                 case "4":
                     float b2;
@@ -54,7 +55,8 @@ namespace Ejercicio_semana_2
                     float h2;
                     Console.WriteLine("Introducir la altura del triangulo: ");
                     h2 = float.Parse(Console.ReadLine());
-                    triangle = new Triangle(h2, b2);
+                    //triangle = new Triangle(h2, b2);
+                    shapeAreas.Add(new Triangle("Triangulo", b2, h2));
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");
@@ -62,21 +64,9 @@ namespace Ejercicio_semana_2
 
             }
 
-            if (square != null)
+            foreach (var shapeArea in shapeAreas)
             {
-                Console.WriteLine($"El área es {square.CalculateArea()}");
-            }
-            if (circle != null)
-            {
-                Console.WriteLine($"El área es {circle.CalculateArea()}");
-            }
-            if (rectangle != null)
-            {
-                Console.WriteLine($"El área es {rectangle.CalculateArea()}");
-            }
-            if (triangle != null)
-            {
-                Console.WriteLine($"El área es {triangle.CalculateArea()}");
+                Console.WriteLine($"El area es {shapeArea.CalculateArea()}");
             }
 
             Console.ReadLine();

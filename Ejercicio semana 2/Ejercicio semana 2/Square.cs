@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_semana_2
 {
-    class Square : Shape
+    class Square : Shape, ICalculateArea
     {
         private float sideSquare;
 
-        public Square(float sideSquare)
+        public Square(string name,float sideSquare) : base ("Cuadrado", name)
         {
             this.sideSquare = sideSquare;
         }
 
-        public override float CalculateArea()
+        public float CalculateArea()
         {
             return sideSquare * sideSquare;
         }

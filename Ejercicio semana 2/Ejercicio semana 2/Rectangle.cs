@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_semana_2
 {
-    class Rectangle : Shape
+    class Rectangle : Shape, ICalculateArea
     {
         private float b;
         private float h;
 
-        public Rectangle(float b, float h)
+        public Rectangle(string name,float b, float h) : base("Rectangulo", name)
         {
             this.b = b;
             this.h = h;
         }
 
-        public override float CalculateArea()
+        public float CalculateArea()
         {
             return b * h;
         }
